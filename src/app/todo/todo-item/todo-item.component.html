@@ -1,0 +1,11 @@
+<!-- These are here just to show the structure of the list items -->
+<!-- List items should get the class `editing` when editing and `completed` when marked as completed -->
+<!--  (click)="todo.estado = !todo.estado" -->
+<li class="" [ngClass]="{'editing' : edit, 'completed': todo.estado }">
+    <div class="view">
+        <input class="toggle" type="checkbox" [formControl]="chckField" [checked]="todo.estado">
+        <label (dblclick)="editar()">{{todo.texto}}</label>
+        <button class="destroy" (click)="borrar()"></button>
+    </div>
+    <input class="edit" value="" #txtI (keyup.enter)="endEdit()" [formControl]="txtInput">
+</li>
